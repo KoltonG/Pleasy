@@ -22,3 +22,9 @@
 .idea/workspace.xml
 
 .idea/vcs.xml
+
+**/.idea/
+
+.idea/*
+
+.idea/.generators
