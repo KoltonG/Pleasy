@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dept: MyString
+  number: MyString
+  year: 1
+  name: MyString
+  credits: 1
+  writing: false
+  prereq: MyText
+  coreq: MyText
+  description: MyText
+
+two:
+  dept: MyString
+  number: MyString
+  year: 1
+  name: MyString
+  credits: 1
+  writing: false
+  prereq: MyText
+  coreq: MyText
+  description: MyText
