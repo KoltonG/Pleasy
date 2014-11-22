@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+
+  devise_scope :user do
+    root to: "devise/sessions#new"
+    get "signup", to: "devise/registrations#new"
+    get "logina", to: "devise/sessions#new"
+    get "logout", to: "devise/sessions#destroy"
+  end
+
+  post '/register_course' => 'courses_users#register_course'
+
+  #root 'login'
+ # root :to  => 'devise/sessions#new'
+
   resources :prerequisites
 
   resources :courses
@@ -7,7 +21,9 @@ Rails.application.routes.draw do
 
   resources :courses_users
 
+  resources :login
   devise_for :users
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

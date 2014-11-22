@@ -21,6 +21,16 @@
           <td></td>
           <td></td>
           <td> <strong>Section Number:<strong/> <%=h section.section %> Year: <%=h section.year %> Term: <%=h section.term %> </td>
+          <td>
+            <form action="/register_course" method="post">
+              <%= token_tag %>
+              <input type="hidden" name="course_id" value="<%= section.id %>">
+              <input type="hidden" name="term" value="<%= section.term %>">
+              <input type="hidden" name="year" value="<%= section.year %>">
+              <input type="hidden" name="status" value="1">
+              <input type="submit" value="clickme">
+            </form>
+          </td>
         </tr>
       <% end %>
 
