@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course_id:</strong>
+  <%= @courses_user.course_id %>
+</p>
+
+<p>
+  <strong>User_id:</strong>
+  <%= @courses_user.user_id %>
+</p>
+
+<p>
+  <strong>status:</strong>
+  <%= @courses_user.status %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @courses_user.term %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @courses_user.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_courses_user_path(@courses_user) %> |
+<%= link_to 'Back', courses_users_path %>

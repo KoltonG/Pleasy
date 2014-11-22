@@ -1,0 +1,95 @@
+<h1>Listing courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Year</th>
+      <th>Dept</th>
+      <th>Number</th>
+      <th>Section</th>
+      <th>Section number</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Style</th>
+      <th>Day sun</th>
+      <th>Day mon</th>
+      <th>Day tue</th>
+      <th>Day wed</th>
+      <th>Day thu</th>
+      <th>Day fri</th>
+      <th>Day sat</th>
+      <th>Day sun</th>
+      <th>Time start</th>
+      <th>Time end</th>
+      <th>Room</th>
+      <th>Location</th>
+      <th>Lab</th>
+      <th>Lab style</th>
+      <th>Lab location</th>
+      <th>Lab day sun</th>
+      <th>Lab day mon</th>
+      <th>Lab day tue</th>
+      <th>Lab day wed</th>
+      <th>Lab day thu</th>
+      <th>Lab day fri</th>
+      <th>Lab day sat</th>
+      <th>Lab day sun</th>
+      <th>Lab time start</th>
+      <th>Lab time end</th>
+      <th>Prof name</th>
+      <th>Credits</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.term %></td>
+        <td><%= course.year %></td>
+        <td><%= course.dept %></td>
+        <td><%= course.number %></td>
+        <td><%= course.section %></td>
+        <td><%= course.section_number %></td>
+        <td><%= course.name %></td>
+        <td><%= course.city %></td>
+        <td><%= course.style %></td>
+        <td><%= course.day_sun %></td>
+        <td><%= course.day_mon %></td>
+        <td><%= course.day_tue %></td>
+        <td><%= course.day_wed %></td>
+        <td><%= course.day_thu %></td>
+        <td><%= course.day_fri %></td>
+        <td><%= course.day_sat %></td>
+        <td><%= course.day_sun %></td>
+        <td><%= course.time_start %></td>
+        <td><%= course.time_end %></td>
+        <td><%= course.room %></td>
+        <td><%= course.location %></td>
+        <td><%= course.lab %></td>
+        <td><%= course.lab_style %></td>
+        <td><%= course.lab_location %></td>
+        <td><%= course.lab_day_sun %></td>
+        <td><%= course.lab_day_mon %></td>
+        <td><%= course.lab_day_tue %></td>
+        <td><%= course.lab_day_wed %></td>
+        <td><%= course.lab_day_thu %></td>
+        <td><%= course.lab_day_fri %></td>
+        <td><%= course.lab_day_sat %></td>
+        <td><%= course.lab_day_sun %></td>
+        <td><%= course.lab_time_start %></td>
+        <td><%= course.lab_time_end %></td>
+        <td><%= course.prof_name %></td>
+        <td><%= course.credits %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course', new_course_path %>

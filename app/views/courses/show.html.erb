@@ -1,0 +1,195 @@
+<p id="notice"><%= notice %></p>
+
+SECTIONS
+<ul>
+  <% for section in @course.sections %>
+      <li>
+        Section Number: <%=h section.section %> Year: <%=h section.year %> Term: <%=h section.term %>
+      </li>
+
+  <% end %>
+</ul>
+
+
+<p>
+  <strong>Term:</strong>
+  <%= @course.term %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @course.year %>
+</p>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @course.dept %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @course.number %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @course.section %>
+</p>
+
+<p>
+  <strong>Section number:</strong>
+  <%= @course.section_number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @course.city %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @course.style %>
+</p>
+
+<p>
+  <strong>Day sun:</strong>
+  <%= @course.day_sun %>
+</p>
+
+<p>
+  <strong>Day mon:</strong>
+  <%= @course.day_mon %>
+</p>
+
+<p>
+  <strong>Day tue:</strong>
+  <%= @course.day_tue %>
+</p>
+
+<p>
+  <strong>Day wed:</strong>
+  <%= @course.day_wed %>
+</p>
+
+<p>
+  <strong>Day thu:</strong>
+  <%= @course.day_thu %>
+</p>
+
+<p>
+  <strong>Day fri:</strong>
+  <%= @course.day_fri %>
+</p>
+
+<p>
+  <strong>Day sat:</strong>
+  <%= @course.day_sat %>
+</p>
+
+<p>
+  <strong>Day sun:</strong>
+  <%= @course.day_sun %>
+</p>
+
+<p>
+  <strong>Time start:</strong>
+  <%= @course.time_start %>
+</p>
+
+<p>
+  <strong>Time end:</strong>
+  <%= @course.time_end %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @course.room %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @course.location %>
+</p>
+
+<p>
+  <strong>Lab:</strong>
+  <%= @course.lab %>
+</p>
+
+<p>
+  <strong>Lab style:</strong>
+  <%= @course.lab_style %>
+</p>
+
+<p>
+  <strong>Lab location:</strong>
+  <%= @course.lab_location %>
+</p>
+
+<p>
+  <strong>Lab day sun:</strong>
+  <%= @course.lab_day_sun %>
+</p>
+
+<p>
+  <strong>Lab day mon:</strong>
+  <%= @course.lab_day_mon %>
+</p>
+
+<p>
+  <strong>Lab day tue:</strong>
+  <%= @course.lab_day_tue %>
+</p>
+
+<p>
+  <strong>Lab day wed:</strong>
+  <%= @course.lab_day_wed %>
+</p>
+
+<p>
+  <strong>Lab day thu:</strong>
+  <%= @course.lab_day_thu %>
+</p>
+
+<p>
+  <strong>Lab day fri:</strong>
+  <%= @course.lab_day_fri %>
+</p>
+
+<p>
+  <strong>Lab day sat:</strong>
+  <%= @course.lab_day_sat %>
+</p>
+
+<p>
+  <strong>Lab day sun:</strong>
+  <%= @course.lab_day_sun %>
+</p>
+
+<p>
+  <strong>Lab time start:</strong>
+  <%= @course.lab_time_start %>
+</p>
+
+<p>
+  <strong>Lab time end:</strong>
+  <%= @course.lab_time_end %>
+</p>
+
+<p>
+  <strong>Prof name:</strong>
+  <%= @course.prof_name %>
+</p>
+
+<p>
+  <strong>Credits:</strong>
+  <%= @course.credits %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

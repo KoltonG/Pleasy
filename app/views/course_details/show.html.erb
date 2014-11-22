@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+PREREQS
+<ul>
+  <% for prerequisite in @course_detail.prerequisites %>
+      <li>
+        <%=h prerequisite.prereq.id %>
+        (<%= link_to "remove", prerequisite, :method => :delete  %>)
+      </li>
+  <% end %>
+</ul>
+
+PREREQS_INVERSE
+<ul>
+  <% for course_detail in @course_detail.inverse_prereqs  %>
+      <li>
+        <%=h course_detail.id  %>
+      </li>
+  <% end %>
+</ul>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @course_detail.dept %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @course_detail.number %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @course_detail.year %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @course_detail.name %>
+</p>
+
+<p>
+  <strong>Credits:</strong>
+  <%= @course_detail.credits %>
+</p>
+
+<p>
+  <strong>Writing:</strong>
+  <%= @course_detail.writing %>
+</p>
+
+<p>
+  <strong>Prereq:</strong>
+  <%= @course_detail.prereq %>
+</p>
+
+<p>
+  <strong>Coreq:</strong>
+  <%= @course_detail.coreq %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course_detail.description %>
+</p>
+
+<%= link_to 'Edit', edit_course_detail_path(@course_detail) %> |
+<%= link_to 'Back', course_details_path %>

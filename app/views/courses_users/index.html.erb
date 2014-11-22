@@ -1,0 +1,33 @@
+<h1>Listing courses_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>course_id</th>
+      <th>user_id</th>
+      <th>year</th>
+      <th>term</th>
+      <th>status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses_users.each do |courses_user| %>
+      <tr>
+        <td><%= courses_user.course_id %></td>
+        <td><%= courses_user.user_id %></td>
+        <td><%= courses_user.year %></td>
+        <td><%= courses_user.term %></td>
+        <td><%= courses_user.status %></td>
+        <td><%= link_to 'Show', courses_user %></td>
+        <td><%= link_to 'Edit', edit_courses_user_path(courses_user) %></td>
+        <td><%= link_to 'Destroy', courses_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course detail', new_courses_user_path %>

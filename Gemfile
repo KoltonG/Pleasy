@@ -26,6 +26,21 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'tzinfo-data'
+
+#This is used to dump the data in our tables to the seeds.rb file. Just type "rake db:seed:dump" to do this
+gem 'seed_dump'
+
+#Will simplify and control our login handling... #rails g devise:install
+#At the moment, http://localhost:3000/users/sign_up  is for signup
+gem 'devise'
+
+#Nifty scaffolding
+#gem 'nifty-generators'
+
+#Makes validating overlapping time slots easier
+gem 'validates_overlap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -38,3 +53,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem "mocha", group: :test

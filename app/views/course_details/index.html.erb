@@ -1,0 +1,41 @@
+<h1>Listing course_details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dept</th>
+      <th>Number</th>
+      <th>Year</th>
+      <th>Name</th>
+      <th>Credits</th>
+      <th>Writing</th>
+      <th>Prereq</th>
+      <th>Coreq</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @course_details.each do |course_detail| %>
+      <tr>
+        <td><%= course_detail.dept %></td>
+        <td><%= course_detail.number %></td>
+        <td><%= course_detail.year %></td>
+        <td><%= course_detail.name %></td>
+        <td><%= course_detail.credits %></td>
+        <td><%= course_detail.writing %></td>
+        <td><%= course_detail.prereq %></td>
+        <td><%= course_detail.coreq %></td>
+        <td><%= course_detail.description %></td>
+        <td><%= link_to 'Show', course_detail %></td>
+        <td><%= link_to 'Edit', edit_course_detail_path(course_detail) %></td>
+        <td><%= link_to 'Destroy', course_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Course detail', new_course_detail_path %>

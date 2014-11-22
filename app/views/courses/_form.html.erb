@@ -1,0 +1,161 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :term %><br>
+    <%= f.text_field :term %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :dept %><br>
+    <%= f.text_field :dept %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :section %><br>
+    <%= f.text_field :section %>
+  </div>
+  <div class="field">
+    <%= f.label :section_number %><br>
+    <%= f.number_field :section_number %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :style %><br>
+    <%= f.text_field :style %>
+  </div>
+  <div class="field">
+    <%= f.label :day_sun %><br>
+    <%= f.check_box :day_sun %>
+  </div>
+  <div class="field">
+    <%= f.label :day_mon %><br>
+    <%= f.check_box :day_mon %>
+  </div>
+  <div class="field">
+    <%= f.label :day_tue %><br>
+    <%= f.check_box :day_tue %>
+  </div>
+  <div class="field">
+    <%= f.label :day_wed %><br>
+    <%= f.check_box :day_wed %>
+  </div>
+  <div class="field">
+    <%= f.label :day_thu %><br>
+    <%= f.check_box :day_thu %>
+  </div>
+  <div class="field">
+    <%= f.label :day_fri %><br>
+    <%= f.check_box :day_fri %>
+  </div>
+  <div class="field">
+    <%= f.label :day_sat %><br>
+    <%= f.check_box :day_sat %>
+  </div>
+  <div class="field">
+    <%= f.label :day_sun %><br>
+    <%= f.check_box :day_sun %>
+  </div>
+  <div class="field">
+    <%= f.label :time_start %><br>
+    <%= f.time_select :time_start %>
+  </div>
+  <div class="field">
+    <%= f.label :time_end %><br>
+    <%= f.time_select :time_end %>
+  </div>
+  <div class="field">
+    <%= f.label :room %><br>
+    <%= f.text_field :room %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :lab %><br>
+    <%= f.check_box :lab %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_style %><br>
+    <%= f.text_field :lab_style %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_location %><br>
+    <%= f.text_field :lab_location %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_sun %><br>
+    <%= f.check_box :lab_day_sun %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_mon %><br>
+    <%= f.check_box :lab_day_mon %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_tue %><br>
+    <%= f.check_box :lab_day_tue %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_wed %><br>
+    <%= f.check_box :lab_day_wed %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_thu %><br>
+    <%= f.check_box :lab_day_thu %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_fri %><br>
+    <%= f.check_box :lab_day_fri %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_sat %><br>
+    <%= f.check_box :lab_day_sat %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_day_sun %><br>
+    <%= f.check_box :lab_day_sun %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_time_start %><br>
+    <%= f.time_select :lab_time_start %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_time_end %><br>
+    <%= f.time_select :lab_time_end %>
+  </div>
+  <div class="field">
+    <%= f.label :prof_name %><br>
+    <%= f.text_field :prof_name %>
+  </div>
+  <div class="field">
+    <%= f.label :credits %><br>
+    <%= f.number_field :credits %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
