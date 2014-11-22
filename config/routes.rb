@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
 
   devise_scope :user do
-    root to: "devise/sessions#new"
-    get "signup", to: "devise/registrations#new"
-    get "logina", to: "devise/sessions#new"
-    get "logout", to: "devise/sessions#destroy"
+    root 'tests2#index'
+    get 'signup', to: 'devise/registrations#new'
+    get 'logina', to: 'devise/sessions#new'
+    get 'logout', to: 'devise/sessions#destroy'
   end
 
   post '/register_course' => 'courses_users#register_course'
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :courses_users
 
   resources :login
+
   devise_for :users
 
 
