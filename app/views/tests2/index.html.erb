@@ -1,4 +1,4 @@
-<h1>Courses to register on</h1>
+<h1>Winter courses to register</h1>
 <table>
   <thead>
     <tr>
@@ -16,22 +16,24 @@
         <td><%= course.number %></td>
         <td><%= course.description %></td>
       </tr>
-      <% for section in course.sections %>
-        <tr>
-          <td></td>
-          <td></td>
-          <td> <strong>Section Number:<strong/> <%=h section.section %> Year: <%=h section.year %> Term: <%=h section.term %> </td>
-          <td>
-            <form action="/register_course" method="post">
-              <%= token_tag %>
-              <input type="hidden" name="course_id" value="<%= section.id %>">
-              <input type="hidden" name="term" value="<%= section.term %>">
-              <input type="hidden" name="year" value="<%= section.year %>">
-              <input type="hidden" name="status" value="1">
-              <input type="submit" value="clickme">
-            </form>
-          </td>
-        </tr>
+      <% for section in course.sections  %>
+          <% if section.term == "Winter" then %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td> <strong>Section Number:<strong/> <%=h section.section %> Year: <%=h section.year %> Term: <%=h section.term %> </td>
+              <td>
+                <form action="/register_course" method="post">
+                  <%= token_tag %>
+                  <input type="hidden" name="course_id" value="<%= section.id %>">
+                  <input type="hidden" name="term" value="<%= section.term %>">
+                  <input type="hidden" name="year" value="<%= section.year %>">
+                  <input type="hidden" name="status" value="1">
+                  <input type="submit" value="clickme">
+                </form>
+              </td>
+            </tr>
+            <% end %>
       <% end %>
 
     <% end %>

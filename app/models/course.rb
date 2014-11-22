@@ -20,6 +20,6 @@ class Course < ActiveRecord::Base
   def sections
     Course.with_section(number, dept)
   end
-  scope :with_section, lambda {|number, dept| where('number = ? AND dept = ?', number, dept) }
+  scope :with_section, lambda {|number, dept| where('number = ? AND dept = ? ', number, dept) }
 end
 

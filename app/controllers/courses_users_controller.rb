@@ -32,7 +32,7 @@ class CoursesUsersController < ApplicationController
   end
 
   def register_course
-    @newregistration = CoursesUser.new(course_id: params[:course_id], user_id: current_user.id, year: params[:year], status: params[:status])
+    @newregistration = CoursesUser.new(course_id: params[:course_id], user_id: current_user.id, term: params[:term], year: params[:year], status: params[:status])
     if @newregistration.save
       flash.now[:error] = "Ok"
     else
