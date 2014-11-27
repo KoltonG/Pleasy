@@ -2,37 +2,19 @@
 <html>
 <head>
   <title>Pleasy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
   <%= csrf_meta_tags %>
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,400,700,800">
+  <link href='http://fonts.googleapis.com/css?family=Lato:700,100italic' rel='stylesheet' type='text/css'>
+
 </head>
-<body>
+<body class="metro">
 
-<%-# Shows login status as an example, we can delete this at some point! -%>
-
-        <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.email %> and id is <%= current_user.id %> </strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-
-
-
-
-<%-# This is code for Devise, which I assume shows a success or fail notice... -%>
-<% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<div class="container">
   <%= yield %>
-</div>
 
+
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 </body>
 </html>

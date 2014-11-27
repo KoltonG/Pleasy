@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require jquery-ui.min
+//= require jquery.mousewheel.min
+//= require classie
+//= require metro.min
+//= require main
+//= require random-people

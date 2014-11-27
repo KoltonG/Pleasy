@@ -1,0 +1,181 @@
+/*************************************
+              COLORS
+*************************************/
+.content::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-image: image-url('fred4.jpg');
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  opacity: 1;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
+.content {
+  z-index: 20 !important; }
+
+/*************************************
+          COURSE CONTAINER
+*************************************/
+.course-list{
+  width: 1140px !important;
+  margin: 0 auto 50px;
+  padding: 10px !important;
+
+  &.core {
+    background-color: rgba(0, 138, 0, .5);
+    border: 1px rgba(0,138,0, .5) solid;
+
+    .list {
+      border: 1px rgba(0, 138, 0, 0.5) solid;
+    }
+  }
+
+  &.tech {
+    background-color: rgba(67, 144, 223, .5);
+    border: 1px rgba(67, 144, 223, 0.5) solid;
+
+    .list {
+      border: 1px rgba(67, 144, 223, 0.5) solid;
+    }
+  }
+
+  &.math {
+    background-color: rgba(240, 163, 10, .5);
+    border: 1px rgba(240, 163, 10, .5) solid;
+
+    .list {
+      border: 1px rgba(240, 163, 10, .5) solid;
+    }
+  }
+
+  &.breadth {
+    background-color: rgba(216, 0, 115, .5);
+    border: 1px rgba(216, 0, 115, .5) solid;
+
+    .list {
+      border: 1px rgba(216, 0, 115, .5) solid;
+    }
+  }
+
+  &.elective {
+    background-color: rgba(170, 0, 255, .5);
+    border: 1px rgba(170, 0, 255, .5) solid;
+
+    .list {
+      border: 1px rgba(170, 0, 255, .5) solid;
+    }
+  }
+}
+
+.content-wrap .content {
+
+  .core::before,
+  .tech::before,
+  .math::before,
+  .breadth::before,
+  .elective::before{
+    position: absolute;
+    left: -10px;
+    top: -30px;
+    color: #fff !important;
+    margin: 5px 10px;
+    font-family: 'Raleway', 'Open Sans Bold', Verdana, Arial, Helvetica, sans-serif;
+    font-weight: 100 !important;
+    font-size: 3rem !important;
+    line-height: 1.3rem !important;
+    letter-spacing: 0.4em;
+    color: #000;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border: none;
+  }
+
+  .core::before {
+    content: "Core Courses";
+  }
+
+  .tech::before {
+    content: "Technical Electives";
+  }
+
+  .math::before {
+    content: "Math and Statistics Core Courses";
+  }
+
+  .breadth::before {
+    content: "Breadth Core -- WRITTING ????";
+  }
+
+  .elective::before {
+    content: "Free Electives";
+  }
+
+
+}
+
+/*************************************
+          COURSE BOXES
+*************************************/
+
+.course-box {
+  width: 24% !important;
+  margin: 0.5% !important;
+  border-color: #fff; 
+  display: inline-block; 
+  float: left;
+}
+
+.course-box:nth-child(5n - n - 1) {
+  clear: both;
+}
+
+.tooltip{
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover:after{
+    background: #4390DF;
+    background: rgba(67,144,223,.8);
+    border-radius: 20px;
+    bottom: 88px;
+    color: #fff;
+    content: attr(title);
+    left: 0%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 200%;
+}
+
+.tooltip:nth-child(4n) {
+  &:hover:after {
+    width: 100%;
+    left: -6%;
+  }
+}
+
+.tooltip:hover:before{
+    border: solid;
+    border-color: rgba(67,144,223,.8) transparent;
+    border-width: 9px 8px 0 8px;
+    bottom: 79px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}

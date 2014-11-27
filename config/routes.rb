@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   post '/register_course' => 'courses_users#register_course'
 
+  get '/dashboard' => 'dashboard#BCS'
+
   #root 'login'
  # root :to  => 'devise/sessions#new'
 

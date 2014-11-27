@@ -1,0 +1,111 @@
+<div class="container bg-dark">
+  <div class="menu-wrap">
+    <nav class="menu-top">
+      <div class="profile"><img id="picture" src="" height="42px" width="42px" alt="Matthew Greenberg"/><span id="name" style="text-transform: capitalize;"></span></div>
+      <div class="icon-list">
+        <a href="#"><i class="fa fa-fw fa-star-o"></i></a>
+        <a href="#"><i class="fa fa-fw fa-bell-o"></i></a>
+        <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
+        <a href="#"><i class="fa fa-fw fa-comment-o"></i></a>
+      </div>
+    </nav>
+    <nav class="menu-side">
+      <a href="#" class="fg-emerald"><i class="fa fa-circle-o-notch fa-2x"></i> 37% - Core Courses</a>
+      <a href="#" class="fg-lightBlue"><i class="fa fa-circle-o-notch fa-2x"></i> 45% - Technical Electives</a>
+      <a href="#" class="fg-amber"><i class="fa fa-circle-o-notch fa-2x"></i> 15% - Math & Statistics Courses</a>
+      <a href="#" class="fg-magenta"><i class="fa fa-circle-o-notch fa-2x"></i> 56% - Breadth Courses</a>
+      <a href="#" class="fg-violet"><i class="fa fa-circle-o-notch fa-2x"></i> 78% - Free Elective</a>
+    </nav>
+  </div>
+  <button class="menu-button" id="open-button"></button>
+  <div class="content-wrap">
+    <div class="content">
+      <header class="codrops-header">
+        <h1>Kolton's BCS Progress<span>Showing Course Requirements</span></h1>
+      </header>
+
+      <!-- Core Coursess -->
+      <div class="example course-list core">
+        <div class="grid fluid">
+          <div class="row no-margin">
+            <div class="listview">
+
+              <!-- Boxes -->
+              <% @core_courses.each do |course| %>
+                <a href="#" class="list course-box tooltip" title="<%= course.description %>">
+                  <div title="" class="list-content bg-lime fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
+                    <div style="width: intrinsic;width: -moz-max-content;width: -webkit-max-content;height: 56px; text-align: center; font-family: 'Lato'; font-weight: 400;" class="icon">
+                      <span style="font-family: 'Lato'; color: white; font-weight: 700; letter-spacing: 2.2px;"><%= course.dept %></span>
+                    </div>
+                    <div class="data">
+                      <span class="list-title" style="padding-top: 15px; font-size: 35px; height: 43px; font-family: 'Lato'; font-weight: 100; font-style: italic; color:#fff;"><%= course.number %></span>
+                      <div class="rating small no-margin fg-yellow" data-score="5" data-role="rating" data-stars="5" style="margin-bottom: 0px; height: 19px;"><ul style="margin-bottom: 0px;"><li></li><li></li><li></li><li></li><li></li></ul></div>
+                    </div>
+                  </div>
+                </a>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Electives -->
+      <div class="example course-list tech">
+        <div class="grid fluid">
+          <div class="row no-margin">
+            <div class="listview">
+
+              <!-- Boxes -->
+              <% @tech_courses.each do |course| %>
+                  <a href="#" class="list course-box tooltip" title="<%= course.description %>">
+                    <div title="" class="list-content bg-darkCyan fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
+                      <div style="width: intrinsic;width: -moz-max-content;width: -webkit-max-content;height: 56px; text-align: center; font-family: 'Lato'; font-weight: 400;" class="icon">
+                        <span style="font-family: 'Lato'; color: white; font-weight: 700; letter-spacing: 2.2px;"><%= course.dept %></span>
+                      </div>
+                      <div class="data">
+                        <span class="list-title" style="padding-top: 15px; font-size: 35px; height: 43px; font-family: 'Lato'; font-weight: 100; font-style: italic; color:#fff;"><%= course.number %></span>
+                        <div class="rating small no-margin fg-yellow" data-score="5" data-role="rating" data-stars="5" style="margin-bottom: 0px; height: 19px;"><ul style="margin-bottom: 0px;"><li></li><li></li><li></li><li></li><li></li></ul></div>
+                      </div>
+                    </div>
+                  </a>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Math & Stats Core Courses -->
+      <div class="example course-list math">
+        <div class="grid fluid">
+          <div class="row no-margin">
+            <div class="listview">
+
+              <!-- Boxes -->
+              <% @math_stat_courses.each do |course| %>
+                  <a href="#" class="list course-box tooltip" title="<%= course.description %>">
+                    <div title="" class="list-content bg-yellow fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
+                      <div style="width: intrinsic;width: -moz-max-content;width: -webkit-max-content;height: 56px; text-align: center; font-family: 'Lato'; font-weight: 400;" class="icon">
+                        <span style="font-family: 'Lato'; color: white; font-weight: 700; letter-spacing: 2.2px;"><%= course.dept %></span>
+                      </div>
+                      <div class="data">
+                        <span class="list-title" style="padding-top: 15px; font-size: 35px; height: 43px; font-family: 'Lato'; font-weight: 100; font-style: italic; color:#fff;"><%= course.number %></span>
+                        <div class="rating small no-margin fg-yellow" data-score="5" data-role="rating" data-stars="5" style="margin-bottom: 0px; height: 19px;"><ul style="margin-bottom: 0px;"><li></li><li></li><li></li><li></li><li></li></ul></div>
+                      </div>
+                    </div>
+                  </a>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /content-wrap -->
+</div><!-- /container -->
+
+
+
