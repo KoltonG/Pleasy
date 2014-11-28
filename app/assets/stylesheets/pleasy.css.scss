@@ -1,3 +1,9 @@
+
+.metro {
+  -webkit-font-smoothing: antialiased;
+}
+
+
 /*************************************
               COLORS
 *************************************/
@@ -25,6 +31,32 @@
   z-index: 20 !important; }
 
 /*************************************
+          SIDE MENU
+*************************************/
+
+.menu-side {
+
+  div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  a {
+    position: absolute;
+  }
+
+  .progress {
+    width: 250px;
+    height: 62.59375px;
+    top: 62px;
+    z-index: 0;
+  }
+
+}
+
+
+
+
+/*************************************
           COURSE CONTAINER
 *************************************/
 .course-list{
@@ -42,20 +74,20 @@
   }
 
   &.tech {
-    background-color: rgba(67, 144, 223, .5);
-    border: 1px rgba(67, 144, 223, 0.5) solid;
+    background-color: rgba(22,73,154, .5);
+    border: 1px rgba(22,73,154, 0.5) solid;
 
     .list {
-      border: 1px rgba(67, 144, 223, 0.5) solid;
+      border: 1px rgba(22,73,154, 0.5) solid;
     }
   }
 
   &.math {
-    background-color: rgba(240, 163, 10, .5);
-    border: 1px rgba(240, 163, 10, .5) solid;
+    background-color: rgba(191,90,21, .5);
+    border: 1px rgba(191,90,21, .5) solid;
 
     .list {
-      border: 1px rgba(240, 163, 10, .5) solid;
+      border: 1px rgba(191,90,21, .5) solid;
     }
   }
 
@@ -148,9 +180,51 @@
     position: relative;
 }
 
+.core .overlay-fluid {
+    background-image: image-url('core_check_mark-128.png');
+}
+
+.tech .overlay-fluid {
+    background-image: image-url('tech_check_mark-128.png');
+}
+
+.math .overlay-fluid {
+    background-image: image-url('math.png');
+}
+
+.overlay-fluid {
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 2px);
+  overflow: hidden;
+  background-color: #1e1e1e;
+  padding: 5px 10px;
+  opacity: .8;
+  bottom: -55px;
+  font-size: 8pt;
+  color: #fff;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  background-size: 64px 64px;
+  background-position: 50% 50%;
+}
+
+.course-box:hover .overlay-fluid {
+  -webkit-transform: translate(0, -54px);
+  -ms-transform: translate(0, -54px);
+  -o-transform: translate(0, -54px);
+  -moz-transform: translate(0, -54px);
+  transform: translate(0, -54px);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  visibility: visible;
+}
+
 .tooltip:hover:after{
     background: #4390DF;
-    background: rgba(67,144,223,.8);
     border-radius: 20px;
     bottom: 88px;
     color: #fff;
@@ -162,6 +236,18 @@
     width: 200%;
 }
 
+.core .tooltip:hover:after {
+  background-color: rgb(0, 138, 0);
+}
+
+.tech .tooltip:hover:after {
+  background-color: rgb(22, 73, 154);
+}
+
+.math .tooltip:hover:after {
+  background-color: rgb(191, 90, 21);
+}
+
 .tooltip:nth-child(4n) {
   &:hover:after {
     width: 100%;
@@ -171,11 +257,22 @@
 
 .tooltip:hover:before{
     border: solid;
-    border-color: rgba(67,144,223,.8) transparent;
     border-width: 9px 8px 0 8px;
     bottom: 79px;
     content: "";
     left: 50%;
     position: absolute;
     z-index: 99;
+}
+
+.core .tooltip:hover:before {
+  border-color: rgb(0, 138, 0) transparent;
+}
+
+.tech .tooltip:hover:before {
+  border-color: rgb(22, 73, 154) transparent;
+}
+
+.math .tooltip:hover:before {
+  border-color: rgb(191, 90, 21) transparent;
 }
