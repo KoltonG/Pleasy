@@ -5,7 +5,7 @@ $( document ).ready(function() {
     dataType: 'json',
     success: function(data){
       $('#picture').attr('src', data.results[0].user.picture.thumbnail);
-      $('#name').html(data.results[0].user.name.first + ' ' + data.results[0].user.name.last);
+      //$('#name').html(data.results[0].user.name.first + ' ' + data.results[0].user.name.last);
     }
   });
   

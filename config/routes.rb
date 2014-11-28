@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_scope :user do
-    root 'tests2#index'
+    root 'dashboard#BCS'
     get 'signup', to: 'devise/registrations#new'
     get 'logina', to: 'devise/sessions#new'
     get 'logout', to: 'devise/sessions#destroy'

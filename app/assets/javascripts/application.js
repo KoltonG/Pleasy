@@ -18,3 +18,5 @@
 //= require metro.min
 //= require main
 //= require random-people
+//= require init
+//= require skel.min

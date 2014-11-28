@@ -28,3 +28,6 @@
 .idea/*
 
 .idea/.generators
+
+config/database.yml
+config/database.yml

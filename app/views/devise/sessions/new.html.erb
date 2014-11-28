@@ -1,26 +1,44 @@
-<h2>Log in</h2>
+<!--
+	Aerial 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<div id="wrapper">
+  <div id="bg">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
   </div>
+  <div id="overlay">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
   </div>
+  <div id="main">
+    <!-- Header -->
+    <header id="header">
+      <h1><a href=""><img src="../assets/Planzy.png" style="opacity:0.6; filter:alpha(opacity=60);" width="480" height="210" border="0" /></a></h1>
+      <p style="color: white; font-size: 2.25em;">Plan Your Courses &nbsp;&bull;&nbsp; Succeed &nbsp;&bull;&nbsp; Graduate On Time </p>
+      <h5><section class="container">
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+        <div class="login">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="field">
+                <%= f.email_field :email, autofocus: true %>
+              </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+              <div class="field">
+                <%= f.password_field :password, autocomplete: "off" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "Log in" %>
+              </div>
+              <div style="color: white; font-size: 1.5em; margin-top: 0.5em;" >
+                <a href="/users/sign_up" >Sign up</a>
+              </div>
+
+          <% end %>
+        </div>
+    </header>
+    <!-- Footer -->
+    <footer id="footer">
+      <span class="copyright">&copy; Planzy 2014</span>
+    </footer>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
