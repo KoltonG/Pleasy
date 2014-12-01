@@ -4,12 +4,12 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-@import url("../assets/font-awesome.min.css");
+@import url("../../assets/font-awesome.min.css");
 
 /* Basic */
 
 	body, input, select, textarea {
-		color: white;
+		color: white !important;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 15pt;
 		font-weight: 300 !important;
@@ -18,7 +18,7 @@
 	}
 
 	body {
-		background: white;
+		background: white !important;
 		overflow: hidden;
 	}
 
@@ -86,7 +86,7 @@
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
 		background-color: #348cb2;
-		background-image: url("../assets/Fton_157-2.jpg");
+		background-image: url("../../assets/Fton_157-2.jpg");
             -webkit-filter: blur(10px);
             -moz-filter: blur(3px);
             -ms-filter: blur(3px);
@@ -124,7 +124,7 @@
 		-ms-animation: overlay 1.5s 1.5s forwards;
 		animation: overlay 1.5s 1.5s forwards;
 		background-attachment: fixed, fixed;
-		background-image: url("../assets/overlay-pattern.png"), url("../assets/overlay.svg");
+		background-image: url("../../assets/overlay-pattern.png"), url("../../assets/overlay.svg");
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -190,7 +190,7 @@
 		position: relative;
 		text-align: center;
 		top: -1em;
-		vertical-align: middle;
+
 		width: 90%;
 	}
 
@@ -330,7 +330,7 @@
 					-ms-transition: all 0.2s ease-in-out;
 					transition: all 0.2s ease-in-out;
 					border-radius: 100%;
-					border: solid 1px white;
+					border: solid 1px white !important;
 					display: block;
 					font-size: 1.75em;
 					height: 2.5em;
@@ -347,7 +347,7 @@
 
 					#header nav a:hover:before {
 						background-color: rgba(255, 255, 255, 0.175);
-						color: white;
+						color: white !important;
 					}
 
 				#header nav a:active {
@@ -357,7 +357,7 @@
 
 					#header nav a:active:before {
 						background-color: rgba(255, 255, 255, 0.35);
-						color: white;
+						color: white !important;
 					}
 
 				#header nav a span {
@@ -435,6 +435,7 @@
 .login input[type=password]:focus{
 	outline: none;
 	border: 1px solid rgba(255,255,255,0.9);
+    z-index: 1;
 }
 
 .login input[type=button]:focus{
