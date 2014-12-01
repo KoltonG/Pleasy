@@ -406,7 +406,8 @@
 .login input[type=submit]{
 	width: 260px;
 	height: 35px;
-	background: #a4c400;
+	background: #199A19;
+    	opacity: 0.5;
 	border: 1.5px solid #fff;
 	cursor: pointer;
 	border-radius: 2px;
