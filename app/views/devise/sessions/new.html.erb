@@ -18,7 +18,11 @@
     <!-- Header -->
     <header id="header">
       <h1><a href=""><img src="../assets/Planzy.png" style="opacity:0.6; filter:alpha(opacity=60);" width="480" height="210" border="0" /></a></h1>
-      <p style="color: white; font-size: 2.25em;">Plan Your Courses &nbsp;&bull;&nbsp; Succeed &nbsp;&bull;&nbsp; Graduate On Time </p>
+      <% if !devise_error_messages!.empty? %>
+          <%= devise_error_messages! %>
+      <% else  %>
+          <p style="color: white; font-size: 2.25em;">Plan Your Courses &nbsp;&bull;&nbsp; Succeed &nbsp;&bull;&nbsp; Graduate On Time </p>
+      <% end %>
       <h5><section class="container">
 
         <div class="login">
