@@ -180,16 +180,51 @@
     position: relative;
 }
 
-.core .overlay-fluid {
+.taken,
+.enrolled {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: 64px 64px;
+  background-position: 50% 50%;
+}
+
+.core {
+  .taken {
     background-image: image-url('core_check_mark-128.png');
+    border-right: 1px #a4c400 solid;
+  }
+
+  .enrolled {
+    background-image: image-url('core_currently_taking-128.png');
+    border-left: 1px #a4c400 solid;
+  }
 }
 
-.tech .overlay-fluid {
+.tech {
+  .taken {
     background-image: image-url('tech_check_mark-128.png');
+    border-right: 1px #1ba1e2 solid;
+  }
+
+  .enrolled {
+    background-image: image-url('tech_currently_taking-128.png');
+    border-left: 1px #1ba1e2 solid;
+  }
 }
 
-.math .overlay-fluid {
+.math {
+  .taken {
     background-image: image-url('math.png');
+    border-right: 1px #f0a30a solid;
+  }
+
+  .enrolled {
+    background-image: image-url('math_currently_taking-128.png');
+    border-left: 1px #f0a30a solid;
+  }
 }
 
 .overlay-fluid {
@@ -204,9 +239,6 @@
   font-size: 8pt;
   color: #fff;
   visibility: hidden;
-  background-repeat: no-repeat;
-  background-size: 64px 64px;
-  background-position: 50% 50%;
 }
 
 .course-box:hover .overlay-fluid {
@@ -228,12 +260,13 @@
     border-radius: 20px;
     bottom: 88px;
     color: #fff;
-    content: attr(title);
+    content: attr(data-tooltip);
     left: 0%;
     padding: 5px 15px;
     position: absolute;
     z-index: 98;
     width: 200%;
+    white-space: pre-line;
 }
 
 .core .tooltip:hover:after {
