@@ -3,10 +3,17 @@
 <head>
   <title>Pleasy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= yield(:css) %>
+  <%= yield(:head) %>
   <%= csrf_meta_tags %>
-
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200,400,700,800">
   <link href='http://fonts.googleapis.com/css?family=Lato:700,300italic' rel='stylesheet' type='text/css'>
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> FETCH_HEAD
 
 </head>
 <body class="metro">
