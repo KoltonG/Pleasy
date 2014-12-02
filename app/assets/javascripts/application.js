@@ -18,8 +18,5 @@
 //= require metro.min
 //= require main
 //= require random-people
-<<<<<<< HEAD
 //= require dashboard.js
-=======
 
->>>>>>> FETCH_HEAD
