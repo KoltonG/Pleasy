@@ -1,12 +1,13 @@
 <div class="container bg-dark">
   <div class="menu-wrap">
     <nav class="menu-top">
-      <div class="profile"><img id="picture" src="" height="42px" width="42px" alt="Matthew Greenberg"/><span id="name" style="text-transform: capitalize;"> <%= current_user.email %> </span><div><a href="/logout" >Logout</a></div></div>
+      <div class="profile"><img id="picture" src="" height="42px" width="42px" alt="Matthew Greenberg"/><span id="name" style="text-transform: capitalize;"> <%= current_user.email %> </span></div>
       <div class="icon-list">
         <a href="#"><i class="fa fa-fw fa-star-o"></i></a>
         <a href="#"><i class="fa fa-fw fa-bell-o"></i></a>
         <a href="#"><i class="fa fa-fw fa-envelope-o"></i></a>
         <a href="#"><i class="fa fa-fw fa-comment-o"></i></a>
+        <a href="/logout" >Logout</a>
       </div>
     </nav>
     <nav class="menu-side">
@@ -47,8 +48,8 @@
 
               <!-- Boxes -->
               <% @core_courses.each do |course| %>
-                <a href="#" class="list course-box tooltip" data-tooltip="<%= course.name %> &#xa; &#xa; <%= course.description %>">
-                  <div class="list-content bg-lime fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
+                <a href="#" class="list course-box tooltip <% if course.number == '1073' or course.number == '1303'%> available <% else %> not-available <% end %>" data-taken="false" data-course="<%= course.dept + course.number %>" data-tooltip="<%= course.name %> &#xa; &#xa; <%= course.description %>">
+                  <div class="list-content <% if course.number == '1073' or course.number == '1303'%> bg-lime <% else %> bg-gray <% end %> fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
                     <div style="width: intrinsic;width: -moz-max-content;width: -webkit-max-content;height: 56px; text-align: center; font-family: 'Lato'; font-weight: 400;" class="icon">
                       <span style="font-family: 'Lato'; color: white; font-weight: 700; letter-spacing: 2.2px;"><%= course.dept %></span>
                     </div>
@@ -57,9 +58,9 @@
                       <div class="rating small no-margin fg-yellow" data-score="5" data-role="rating" data-stars="5" style="margin-bottom: 0px; height: 19px;"><ul style="margin-bottom: 0px;"><li></li><li></li><li></li><li></li><li></li></ul></div>
                     </div>
                   </div>
-                  <div class="overlay-fluid">
-                    <div class="taken"></div>
-                    <div class="enrolled"></div>
+                  <div class="overlay-fluid overlay <% if course.number != '1073' and course.number != '1303'%> hide <% end %>">
+                    <div class="taken" data-action="taken" data-dept="<%= course.dept %>" data-number="<%= course.number %>"></div>
+                    <div class="enrolled" data-action="enrol" data-dept="<%= course.dept %>" data-number="<%= course.number %>"></div>
                   </div>
                 </a>
               <% end %>
@@ -77,8 +78,8 @@
 
               <!-- Boxes -->
               <% @tech_courses.each do |course| %>
-                  <a href="#" class="list course-box tooltip" data-tooltip="<%= course.name %> &#xa; &#xa; <%= course.description %>">
-                    <div class="list-content bg-cyan fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
+                  <a href="#" class="list course-box tooltip <% if course.number == '1003' or course.number == '1203'%> available <% else %> not-available <% end %>" data-taken="false" data-tooltip="<%= course.name %> &#xa; &#xa; <%= course.description %>">
+                    <div class="list-content <% if course.number == '1003' or course.number == '1203'%> bg-cyan <% else %> bg-gray <% end %> fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
                       <div style="width: intrinsic;width: -moz-max-content;width: -webkit-max-content;height: 56px; text-align: center; font-family: 'Lato'; font-weight: 400;" class="icon">
                         <span style="font-family: 'Lato'; color: white; font-weight: 700; letter-spacing: 2.2px;"><%= course.dept %></span>
                       </div>
@@ -87,9 +88,9 @@
                         <div class="rating small no-margin fg-yellow" data-score="5" data-role="rating" data-stars="5" style="margin-bottom: 0px; height: 19px;"><ul style="margin-bottom: 0px;"><li></li><li></li><li></li><li></li><li></li></ul></div>
                       </div>
                     </div>
-                    <div class="overlay-fluid">
-                      <div class="taken"></div>
-                      <div class="enrolled"></div>
+                    <div class="overlay-fluid <% if course.number != '1003' and course.number != '1203'%> hide <% end %>">
+                      <div class="taken" data-action="taken" data-dept="<%= course.dept %>" data-number="<%= course.number %>"></div>
+                      <div class="enrolled" data-action="enrol" data-dept="<%= course.dept %>" data-number="<%= course.number %>"></div>
                     </div>
                   </a>
               <% end %>
@@ -108,8 +109,8 @@
 
               <!-- Boxes -->
               <% @math_stat_courses.each do |course| %>
-                  <a href="#" class="list course-box tooltip" data-tooltip="<%= course.name %> &#xa; &#xa; <%= course.description %>">
-                    <div class="list-content bg-amber fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
+                  <a href="#" class="list course-box tooltip <% if course.number == '1003' or course.number == '1503'%> available <% else %> not-available <% end %>" data-taken="false" data-tooltip="<%= course.name %> &#xa; &#xa; <%= course.description %>">
+                    <div class="list-content <% if course.number == '1003' or course.number == '1503'%> bg-amber <% else %> bg-gray <% end %> fg-taupe" style="font-family: 'Lato'; padding: 5px 10px;">
                       <div style="width: intrinsic;width: -moz-max-content;width: -webkit-max-content;height: 56px; text-align: center; font-family: 'Lato'; font-weight: 400;" class="icon">
                         <span style="font-family: 'Lato'; color: white; font-weight: 700; letter-spacing: 2.2px;"><%= course.dept %></span>
                       </div>
@@ -118,9 +119,9 @@
                         <div class="rating small no-margin fg-yellow" data-score="5" data-role="rating" data-stars="5" style="margin-bottom: 0px; height: 19px;"><ul style="margin-bottom: 0px;"><li></li><li></li><li></li><li></li><li></li></ul></div>
                       </div>
                     </div>
-                    <div class="overlay-fluid">
-                      <div class="taken"></div>
-                      <div class="enrolled"></div>
+                    <div class="overlay-fluid <% if course.number != '1003' and course.number != '1503'%> hide <% end %>">
+                      <div class="taken" data-action="taken" data-dept="<%= course.dept %>" data-number="<%= course.number %>"></div>
+                      <div class="enrolled" data-action="enrol" data-dept="<%= course.dept %>" data-number="<%= course.number %>"></div>
                     </div>
                   </a>
               <% end %>

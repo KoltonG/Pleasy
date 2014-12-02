@@ -18,5 +18,4 @@
 //= require metro.min
 //= require main
 //= require random-people
-//= require init
-//= require skel.min
+//= require dashboard.js

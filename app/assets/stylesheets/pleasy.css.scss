@@ -238,10 +238,44 @@
   bottom: -55px;
   font-size: 8pt;
   color: #fff;
+  cursor: pointer;
   visibility: hidden;
+  border-radius: 5px;
 }
 
-.course-box:hover .overlay-fluid {
+.completed {
+  opacity: 0.2;
+  visibility: visible;
+  bottom: 0;
+
+  .taken {
+    width: 100%;
+    border-right: none;
+    background-position: 100% 50%;
+  }
+
+  .enrolled {
+    display: none;
+  }
+}
+
+.currently-enrolled {
+  opacity: 0.2;
+  visibility: visible;
+  bottom: 0;
+
+  .taken {
+    display: none;
+  }
+
+  .enrolled {
+    width: 100%;
+    border-left: none;
+    background-position: 100% 50%;
+  }
+}
+
+.course-box:hover .overlay {
   -webkit-transform: translate(0, -54px);
   -ms-transform: translate(0, -54px);
   -o-transform: translate(0, -54px);
@@ -308,4 +342,12 @@
 
 .math .tooltip:hover:before {
   border-color: rgb(191, 90, 21) transparent;
+}
+
+.available {
+  cursor: default;
+}
+
+.not-available {
+  cursor: not-allowed;
 }

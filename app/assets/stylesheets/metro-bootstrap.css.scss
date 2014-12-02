@@ -6663,20 +6663,28 @@ a {
   padding-top: 38px;
 }
 .metro .listview .list {
-  border: 4px transparent solid;
-  width: 300px;
   height: auto;
   position: relative;
   display: block;
-  cursor: pointer;
   color: inherit;
-  margin: 0 0 10px 0;
+  border-radius: 5px;
 }
 .metro .listview .list .list-content {
   padding: 10px;
   position: relative;
   display: block;
-  color: inherit;
+  border-radius: 5px;
+  -webkit-transition: all 2000ms cubic-bezier(0.000, 0.485, 0.000, 1); /* older webkit */
+  -webkit-transition: all 2000ms cubic-bezier(0.000, 0.485, 0.000, 1.015);
+  -moz-transition: all 2000ms cubic-bezier(0.000, 0.485, 0.000, 1.015);
+  -o-transition: all 2000ms cubic-bezier(0.000, 0.485, 0.000, 1.015);
+  transition: all 2000ms cubic-bezier(0.000, 0.485, 0.000, 1.015); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(0.000, 0.485, 0.000, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.000, 0.485, 0.000, 1.015);
+  -moz-transition-timing-function: cubic-bezier(0.000, 0.485, 0.000, 1.015);
+  -o-transition-timing-function: cubic-bezier(0.000, 0.485, 0.000, 1.015);
+  transition-timing-function: cubic-bezier(0.000, 0.485, 0.000, 1.015); /* custom */
 }
 .metro .listview .list .list-content:before,
 .metro .listview .list .list-content:after {
@@ -6688,9 +6696,6 @@ a {
 }
 .metro .listview .list:hover {
   outline: none;
-}
-.metro .listview .list:active {
-  outline: 3px #3e3e3e solid;
 }
 .metro .listview .list {
   border: 1px rgba(0, 138, 0, 0.5) solid;
@@ -8567,6 +8572,7 @@ a {
 .metro .example {
   position: relative;
   min-height: 100px;
+  border-radius: 10px;
 }
 .metro .example:before,
 .metro .example:after {
