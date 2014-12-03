@@ -57,10 +57,24 @@ class DashboardController < ApplicationController
         end
       end
 
+
+      selected_course_record = CourseDetail.where("course_details.year = '2014' AND CONCAT(dept, number) = '" + selected_course + "'").take!
+      course_action_record = CoursesUser.new
+      course_action_record.user_id = current_user.id
+      course_action_record.year = 2014
+      course_action_record.term = 'Winter'
+      course_action_record.course_id = selected_course_record.id
+
+
       if action == 'taken'
         @courses[selected_course] = 'taken'
+        course_action_record.status = 2
+        course_action_record.save
+
       else
         @courses[selected_course] = 'enrolled'
+        course_action_record.status = 1
+        course_action_record.save
       end
 
       searchCourse!
