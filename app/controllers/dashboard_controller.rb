@@ -62,21 +62,34 @@ class DashboardController < ApplicationController
       }
 
 
-      @courses_taken_record.each do |taken_course|
-        @courses[taken_course.dept + taken_course.name] = 'taken'
+      if @courses_taken_record
+        @courses_taken_record.each do |taken_course|
+          @courses[taken_course.dept + taken_course.name] = 'taken'
+        end
       end
-      @courses_enrolled_record.each do |taken_course|
-        @courses[taken_course.dept + taken_course.name] = 'enrolled'
+
+      if @courses_enrolled_record
+        @courses_enrolled_record.each do |taken_course|
+          @courses[taken_course.dept + taken_course.name] = 'enrolled'
+        end
       end
+
 
 
       action = params[:act]
-      selected_course = params[:dept] + params[:number]
-      course_array = params[:taken]
+      selected_course = params[:course]
+      taken_array = params[:taken]
+      enrolled_array = params[:enrolled]
 
-      if course_array
-        course_array.each do |taken|
+      if taken_array
+        taken_array.each do |taken|
           @courses[taken] = 'taken'
+        end
+      end
+
+      if enrolled_array
+        enrolled_array.each do |enrolled|
+          @courses[enrolled] = 'enrolled'
         end
       end
 
@@ -102,7 +115,6 @@ class DashboardController < ApplicationController
         @courses[selected_course] = 'taken'
         course_action_record.status = 2
         course_action_record.save
-
       else
         #Set to taken, save transaction status = 1
         @courses[selected_course] = 'enrolled'
@@ -118,40 +130,78 @@ class DashboardController < ApplicationController
 
   def searchCourse!
 
+    # BASE - CS 1073
     if @courses['CS1073'] == 'taken' || @courses['CS1073'] == 'enrolled' #CS1073
       @courses['CS1083'] = 'available' if !@courses['CS1083']
       @courses['INFO1103'] = 'available' if !@courses['INFO1103']
       @courses['CS3703'] = 'available'  if !@courses['CS3703']
 
       if @courses['CS1083'] == 'taken' || @courses['CS1083'] == 'enrolled' #CS1083
-        @courses['CS2043'] = 'available' if !@courses['CS2403']
+        @courses['CS2043'] = 'available' if !@courses['CS2043']
         @courses['CS2253'] = 'available' if !@courses['CS2253']
 
-        if @courses['CS2043'] == 'taken' || @courses['CS2403'] == 'enrolled' #CS2043
+        if @courses['CS2043'] == 'taken' || @courses['CS2043'] == 'enrolled' #CS2043
           @courses['CS3025'] = 'available' if !@courses['CS3025']
           @courses['CS2053'] = 'available' if !@courses['CS2053']
           @courses['CS3043'] = 'available' if !@courses['CS3043']
+          @courses['CS4015'] = 'available' if !@courses['CS4015']
+          @courses['SWE4203'] = 'available' if !@courses['SWE4203']
+          @courses['SWE4403'] = 'available' if !@courses['SWE4403']
+
         end
 
-        if @courses['CS2253'] == 'taken' || @courses['CS2353'] == 'enrolled' #CS2253
+        if @courses['CS2253'] == 'taken' || @courses['CS2253'] == 'enrolled' #CS2253
           @courses['CS2053'] = 'available' if !@courses['CS2053']
           @courses['CS3413'] = 'available' if !@courses['CS3413']
           @courses['CS3853'] = 'available' if !@courses['CS3853']
           @courses['CS3873'] = 'available' if !@courses['CS3873']
           @courses['CS3997'] = 'available' if !@courses['CS3997']
+
+          if @courses['CS2333'] == 'taken' || @courses['CS2333'] == 'enrolled'
+            @courses['CS3613'] = 'available' if !@courses['CS3613']
+
+            if @courses['CS2383'] == 'taken' || @courses['CS2383'] == 'enrolled'
+              @courses['CS4725'] = 'available' if !@courses['CS4725']
+            end
+
+          end
+
+          if (@courses['CS3413'] == 'taken' || @courses['CS3413'] == 'enrolled') && (@courses['CS3853'] == 'taken' || @courses['CS3853'] == 'enrolled')
+            @courses['CS4405'] = 'available' if !@courses['CS4405']
+          end
+
+          if @courses['CS3853'] == 'taken' || @courses['CS3853'] == 'enrolled'
+            @courses['CS4745'] = 'available' if !@courses['CS4745']
+          end
+
         end
 
       end
 
       if @courses['INFO1103'] == 'taken' || @courses['INFO1103'] == 'enrolled' #INFO1103
         @courses['CS3503'] = 'available' if !@courses['CS3503']
+        @courses['INFO3303'] = 'available' if !@courses['INFO3303']
+        @courses['INFO3403'] = 'available' if !@courses['INFO3403']
+
+        if @courses['CS1303'] == 'taken' || @courses['CS1303'] == 'enrolled'
+          @courses['INFO2403'] = 'available' if !@courses['INFO2403']
+
+          if @courses['INFO2403'] == 'taken' || @courses['INFO2403'] == 'enrolled'
+            @courses['INFO3103'] = 'available' if !@courses['INFO3103']
+          end
+        end
+      end
+
+      if (@courses['MATH2213'] == 'taken' || @courses['MATH2213'] == 'enrolled') || (@courses['MATH1503'] == 'taken' || @courses['MATH1503'] == 'enrolled')
+        @courses['CS3113'] = 'available' if !@courses['CS3113']
       end
 
     end
 
+    # BASE - CS 1303
     if @courses['CS1303'] == 'taken' || @courses['CS1303'] == 'enrolled'
 
-      if (@courses['CS1073'] == 'taken' || @courses['CS1073'] == 'taken') || (@courses['CS1003'] == 'taken' || @courses['CS1003'] == 'taken')
+      if (@courses['CS1073'] == 'taken' || @courses['CS1073'] == 'enrolled') || (@courses['CS1003'] == 'taken' || @courses['CS1003'] == 'enrolled')
         @courses['CS2333'] = 'available' if !@courses['CS2333']
       end
 
@@ -160,10 +210,88 @@ class DashboardController < ApplicationController
       end
 
       if ((@courses['CS2333'] == 'taken' || @courses['CS2333'] == 'enrolled') &&
-          ((@courses['CS2333'] == 'taken' || @courses['CS2333'] == 'enrolled') || (@courses['CS3323'] == 'taken' || @courses['CS3323'] == 'enrolled')) &&
+          ((@courses['CS2383'] == 'taken' || @courses['CS2383'] == 'enrolled') || (@courses['CS3323'] == 'taken' || @courses['CS3323'] == 'enrolled')) &&
           ((@courses['STAT2593'] == 'taken' || @courses['STAT2593'] == 'enrolled') || (@courses['STAT3083'] == 'taken' || @courses['STAT3083'] == 'enrolled')))
 
         @courses['CS3383'] = 'available' if !@courses['CS3383']
+
+        if @courses['CS3383'] == 'taken' || @courses['CS3383'] == 'enrolled'
+          @courses['CS4935'] = 'available' if !@courses['CS4935']
+        end
+
+      end
+
+      if (@courses['MATH2213'] == 'taken' || @courses['MATH2213'] == 'enrolled') || (@courses['MATH1503'] == 'taken' || @courses['MATH1503'] == 'enrolled')
+        @courses['MATH3033'] = 'available' if !@courses['MATH3033']
+      end
+
+
+    end
+
+    # BASE - CS 1003
+    if @courses['CS1003'] == 'taken' || @courses['CS1003'] == 'enrolled'
+      @courses['CS1023'] = 'available' if !@courses['CS1023']
+
+      if @courses['CS1023'] == 'taken' || @courses['CS1023'] == 'enrolled'
+        @courses['CS2033'] = 'available' if !@courses['CS2033']
+      end
+
+      if (@courses['MATH2213'] == 'taken' || @courses['MATH2213'] == 'enrolled') || (@courses['MATH1503'] == 'taken' || @courses['MATH1503'] == 'enrolled')
+        @courses['CS3113'] = 'available' if !@courses['CS3113']
+      end
+
+    end
+
+    # BASE - CS 1203
+    if @courses['CS1203'] == 'taken' || @courses['CS1203'] == 'enrolled'
+      @courses['CS1023'] = 'available' if !@courses['CS1023']
+    end
+
+    # BASE - MATH 1003
+    if @courses['MATH1003'] == 'taken' || @courses['MATH1003'] == 'enrolled'
+      @courses['MATH1013'] = 'available' if !@courses['MATH1013']
+
+      if @courses['MATH1013'] == 'taken' || @courses['MATH1013'] == 'enrolled'
+        @courses['MATH2213'] = 'available' if !@courses['MATH2213']
+        @courses['MATH3093'] = 'available' if !@courses['MATH3093']
+        @courses['MATH3373'] = 'available' if !@courses['MATH3373']
+        @courses['STAT2593'] = 'available' if !@courses['STAT2593']
+        @courses['STAT3083'] = 'available' if !@courses['STAT3083']
+
+        if @courses['STAT3083'] == 'taken' || @courses['STAT3083'] == 'enrolled'
+          @courses['STAT3093'] = 'available' if !@courses['STAT3093']
+
+          if @courses['STAT3093'] == 'taken' || @courses['STAT3093'] == 'enrolled'
+            if (@courses['MATH1503'] == 'taken' || @courses['MATH1503'] == 'enrolled') || (@courses['MATH2213'] == 'taken' || @courses['MATH2213'] == 'enrolled')
+              @courses['STAT3373'] = 'available' if !@courses['STAT3373']
+            end
+          end
+
+        end
+
+        if (@courses['MATH1503'] == 'taken' || @courses['MATH1503'] == 'enrolled') || (@courses['MATH2213'] == 'taken' || @courses['MATH2213'] == 'enrolled')
+          @courses['MATH3063'] = 'available' if !@courses['MATH3063']
+        end
+
+        if @courses['MATH2213'] == 'taken' || @courses['MATH2213'] == 'enrolled'
+          @courses['MATH3213'] = 'available' if !@courses['MATH3213']
+          @courses['MATH3343'] = 'available' if !@courses['MATH3343']
+        end
+
+      end
+
+    end
+
+    # BASE - MATH 1503
+    if @courses['MATH1503'] == 'taken' || @courses['MATH1503'] == 'enrolled'
+      @courses['MATH3343'] = 'available' if !@courses['MATH3343']
+
+      if @courses['CS2253'] == 'taken' || @courses['CS2253'] == 'enrolled'
+        @courses['CS4735'] = 'available' if !@courses['CS4735']
+      end
+
+      if @courses['MATH1013'] == 'taken' || @courses['MATH1013'] == 'enrolled'
+        @courses['MATH3213'] = 'available' if !@courses['MATH3213']
       end
 
     end

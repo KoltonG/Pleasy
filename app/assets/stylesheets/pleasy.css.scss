@@ -45,7 +45,7 @@
   }
 
   .progress {
-    width: 250px;
+    width: 0px;
     height: 62.59375px;
     top: 62px;
     z-index: 0;
@@ -62,6 +62,7 @@
 .course-list{
   width: 1140px !important;
   margin: 0 auto 50px;
+  margin-bottom: 75px;
   padding: 10px !important;
 
   &.core {
@@ -69,6 +70,11 @@
     border: 1px rgba(0,138,0, .5) solid;
 
     .list {
+      border: 1px rgba(0, 138, 0, 0.5) solid;
+    }
+
+    .counter {
+      background-color: rgba(0, 138, 0, 0.5);
       border: 1px rgba(0, 138, 0, 0.5) solid;
     }
   }
@@ -80,6 +86,11 @@
     .list {
       border: 1px rgba(22,73,154, 0.5) solid;
     }
+
+    .counter {
+      background-color: rgba(22, 73, 154, 0.5);
+      border: 1px rgba(22, 73, 154, 0.5) solid;
+    }
   }
 
   &.math {
@@ -88,6 +99,11 @@
 
     .list {
       border: 1px rgba(191,90,21, .5) solid;
+    }
+
+    .counter {
+      background-color: rgba(191, 90, 21, 0.5);
+      border: 1px rgba(191, 90, 21, 0.5) solid;
     }
   }
 
@@ -156,7 +172,23 @@
     content: "Free Electives";
   }
 
+  .counter {
+    bottom: 100%;
+    right: -1px;
+    position: absolute;
+    padding: 10px 50px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: none;
 
+    span {
+      color: #fff;
+      font-family: 'Lato';
+      font-weight: 300;
+      font-style: italic;
+    }
+  }
 }
 
 /*************************************
