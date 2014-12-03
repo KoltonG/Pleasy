@@ -185,10 +185,10 @@ class DashboardController < ApplicationController
 
         if @courses['CS1303'] == 'taken' || @courses['CS1303'] == 'enrolled'
           @courses['INFO2403'] = 'available' if !@courses['INFO2403']
+        end
 
-          if @courses['INFO2403'] == 'taken' || @courses['INFO2403'] == 'enrolled'
-            @courses['INFO3103'] = 'available' if !@courses['INFO3103']
-          end
+        if @courses['CS2043'] == 'taken' || @courses['CS2043'] == 'enrolled'
+          @courses['INFO3103'] = 'available' if !@courses['INFO3103']
         end
       end
 
