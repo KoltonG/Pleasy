@@ -55,3 +55,5 @@ gem 'validates_overlap'
 
 
 gem "mocha", group: :test
+
+gem 'rails_12factor', group: :production
