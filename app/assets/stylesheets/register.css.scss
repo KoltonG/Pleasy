@@ -3,8 +3,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-@import url("../../assets/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 
 /* Basic */
 
@@ -53,28 +52,28 @@
 	@-ms-keyframes wrapper { 0% { opacity: 0; } 100% { opacity: 1; } }
 	@keyframes wrapper { 0% { opacity: 0; } 100% { opacity: 1; } }
 
-	#wrapper {
-		-moz-animation: wrapper 3s forwards;
-		-webkit-animation: wrapper 3s forwards;
-		-o-animation: wrapper 3s forwards;
-		-ms-animation: wrapper 3s forwards;
-		animation: wrapper 3s forwards;
-		height: 100%;
-		left: 0;
-		opacity: 0;
-		position: fixed;
-		top: 0;
-		width: 100%;
-	}
+    #wrapper {
+        -moz-animation: wrapper 1s forwards;
+        -webkit-animation: wrapper 1s forwards;
+        -o-animation: wrapper 1s forwards;
+        -ms-animation: wrapper 1s forwards;
+        animation: wrapper 1s forwards;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 
 /* BG */
 
-	#bg {
-		-moz-animation: bg 60s linear infinite;
-		-webkit-animation: bg 60s linear infinite;
-		-o-animation: bg 60s linear infinite;
-		-ms-animation: bg 60s linear infinite;
-		animation: bg 60s linear infinite;
+    #bg {
+        -moz-animation: bg 60s linear infinite;
+        -webkit-animation: bg 60s linear infinite;
+        -o-animation: bg 60s linear infinite;
+        -ms-animation: bg 60s linear infinite;
+        animation: bg 60s linear infinite;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		-o-backface-visibility: hidden;
@@ -86,7 +85,7 @@
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
 		background-color: #348cb2;
-		background-image: url("../../assets/Fton_157-2.jpg");
+		background-image: image-url("Fton_157-2.jpg");
             -webkit-filter: blur(10px);
             -moz-filter: blur(3px);
             -ms-filter: blur(3px);
@@ -118,13 +117,13 @@
 	@keyframes overlay { 0% { opacity: 0; } 100% { opacity: 1; } }
 
 	#overlay {
-		-moz-animation: overlay 1.5s 1.5s forwards;
-		-webkit-animation: overlay 1.5s 1.5s forwards;
-		-o-animation: overlay 1.5s 1.5s forwards;
-		-ms-animation: overlay 1.5s 1.5s forwards;
-		animation: overlay 1.5s 1.5s forwards;
+		-moz-animation: overlay 0s 0s forwards;
+		-webkit-animation: overlay 0s 0s forwards;
+		-o-animation: overlay 0s 0s forwards;
+		-ms-animation: overlay 0s 0s forwards;
+		animation: overlay 0s 0s forwards;
 		background-attachment: fixed, fixed;
-		background-image: url("../../assets/overlay-pattern.png"), url("../../assets/overlay.svg");
+		background-image: image-url("overlay-pattern.png"), image-url("overlay.svg");
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, cover;
@@ -136,7 +135,7 @@
 		width: 100%;
 	}
 
-/* Main  */
+/* Main */
 
 	#main {
 		height: 100%;
@@ -169,11 +168,11 @@
 	@keyframes nav-icons { 0% { -moz-transform: translate3d(0,1em,0); -webkit-transform: translate3d(0,1em,0); -o-transform: translate3d(0,1em,0); -ms-transform: translate3d(0,1em,0); transform: translate3d(0,1em,0); opacity: 0; } 100% { -moz-transform: translate3d(0,0,0); -webkit-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); transform: translate3d(0,0,0); opacity: 1; } }
 
 	#header {
-		-moz-animation: header 1s 2.25s forwards;
-		-webkit-animation: header 1s 2.25s forwards;
-		-o-animation: header 1s 2.25s forwards;
-		-ms-animation: header 1s 2.25s forwards;
-		animation: header 1s 2.25s forwards;
+		-moz-animation: header 0s 0s forwards;
+		-webkit-animation: header 0s 0s forwards;
+		-o-animation: header 0s 0s forwards;
+		-ms-animation: header 0s 0s forwards;
+		animation: header 0s 0s forwards;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		-o-backface-visibility: hidden;
@@ -416,7 +415,6 @@
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 700;
-	alignment-baseline: baseline;
 	padding: 6px;
 	margin-top: 10px;
     position: relative;
@@ -432,6 +430,7 @@
 
 .login input[type=text]:focus{
 	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
 }
 
 .login input[type=password]:focus{
@@ -462,3 +461,9 @@
 		text-align: center;
 		width: 100%;
 	}
+
+
+
+#error_explanation ul {
+    list-style: none;
+}

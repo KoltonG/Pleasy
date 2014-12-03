@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+/*$( document ).ready(function() {
     
   $.ajax({
     url: 'http://api.randomuser.me/',
@@ -9,4 +9,4 @@ $( document ).ready(function() {
     }
   });
   
-  });
+  }); */
