@@ -82,7 +82,8 @@ html, body, .container, .content-wrap {
   line-height: 42px; }
 
 .menu-top .profile, .menu-side {
-  width: 300px; }
+  width: 300px;
+}
 
 .menu-top .profile img {
   float: left;
@@ -103,10 +104,9 @@ html, body, .container, .content-wrap {
 .menu-side a {
   display: block;
   padding: 1.2em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+}
 
-.menu-side a:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.menu-side a:first-child { }
 
 /* Shown menu */
 .show-menu .menu-wrap {

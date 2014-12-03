@@ -60,7 +60,7 @@
           COURSE CONTAINER
 *************************************/
 .course-list{
-  width: 1140px !important;
+  max-width: 1140px !important;
   margin: 0 auto 50px;
   margin-bottom: 75px;
   padding: 10px !important;
@@ -383,3 +383,22 @@
 .not-available {
   cursor: not-allowed;
 }
+
+
+/*************************************
+                MENU
+*************************************/
+
+.progress-menu {
+  background-color: rgba(0,0,0,0.2);
+}
+
+
+/*************************************
+          Sign Up Page
+*************************************/
+
+#error_explanation ul {
+  list-style: none;
+}
+

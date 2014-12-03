@@ -460,3 +460,9 @@
 		text-align: center;
 		width: 100%;
 	}
+
+
+
+#error_explanation ul {
+    list-style: none;
+}
