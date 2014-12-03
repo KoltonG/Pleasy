@@ -62,6 +62,14 @@ class DashboardController < ApplicationController
       }
 
 
+      @courses_taken_record.each do |taken_course|
+        @courses[taken_course.dept + taken_course.name] = 'taken'
+      end
+      @courses_enrolled_record.each do |taken_course|
+        @courses[taken_course.dept + taken_course.name] = 'enrolled'
+      end
+
+
       action = params[:act]
       selected_course = params[:dept] + params[:number]
       course_array = params[:taken]
