@@ -369,7 +369,7 @@
 .login{
 	position: absolute;
 	top: calc(120% - 50px);
-	left: calc(40% - 50px);
+	left: calc(50% - 175px);
 	height: 150px;
 	width: 350px;
 	padding: 10px;
