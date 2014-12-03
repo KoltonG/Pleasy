@@ -31,6 +31,8 @@ class DashboardController < ApplicationController
 
     @course_enrolled = []
 
+    @taken_courses_record = CoursesUser.joins("INNER JOIN course_details on course_details.id = courses_users.course_id").where("courses_users.user_id = '" + current_user.id.to_s + "'")
+
   end
 
   def taken
@@ -58,20 +60,30 @@ class DashboardController < ApplicationController
       end
 
 
+      # Get all course_details IDs that current_user has taken
+
+
+      #taken_courses_record.each do |taken_course|
+      #  taken_course.course_id
+      #end
+
+      # Get the course record the user clicked on
       selected_course_record = CourseDetail.where("course_details.year = '2014' AND CONCAT(dept, number) = '" + selected_course + "'").take!
+      # Create a new user_courses transaction
       course_action_record = CoursesUser.new
       course_action_record.user_id = current_user.id
       course_action_record.year = 2014
       course_action_record.term = 'Winter'
       course_action_record.course_id = selected_course_record.id
 
-
       if action == 'taken'
+        #Set to taken, save transaction status = 2
         @courses[selected_course] = 'taken'
         course_action_record.status = 2
         course_action_record.save
 
       else
+        #Set to taken, save transaction status = 1
         @courses[selected_course] = 'enrolled'
         course_action_record.status = 1
         course_action_record.save
