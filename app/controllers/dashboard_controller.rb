@@ -29,9 +29,22 @@ class DashboardController < ApplicationController
 
     @courses_taken  = []
 
-    @course_enrolled = []
 
-    @taken_courses_record = CoursesUser.joins("INNER JOIN course_details on course_details.id = courses_users.course_id").where("courses_users.user_id = '" + current_user.id.to_s + "'")
+    #Courses you can't take based on prereqs table
+    restricted_where= 'prerequisites.id IS NOT NULL and (courses_users.user_id <> '.concat( current_user.id.to_s ).concat(' or courses_users.user_id is null)')
+    @restricted_courses =
+        CourseDetail.joins('LEFT JOIN prerequisites ON prerequisites.course_detail_id = course_details.id').joins('LEFT JOIN courses_users on prerequisites.prereq_id = courses_users.course_id').joins('LEFT JOIN courses ON courses.number = course_details.number AND courses.dept = course_details.dept ').where(restricted_where)
+
+    #Courses you can take based on prereqs table
+    available_where= 'prerequisites.id IS NULL or (courses_users.user_id = '.concat( current_user.id.to_s ).concat(' )')
+    @available_courses =
+        CourseDetail.joins('LEFT JOIN prerequisites ON prerequisites.course_detail_id = course_details.id').joins('LEFT JOIN courses_users on prerequisites.prereq_id = courses_users.course_id').joins('LEFT JOIN courses ON courses.number = course_details.number AND courses.dept = course_details.dept ').where(available_where)
+
+    #Courses that user has enrolled in
+    @courses_enrolled_record = CoursesUser.joins("INNER JOIN course_details on course_details.id = courses_users.course_id").where("courses_users.status = 1 AND courses_users.user_id = '" + current_user.id.to_s + "'")
+
+    #Courses that user has taken
+    @courses_taken_record = CoursesUser.joins("INNER JOIN course_details on course_details.id = courses_users.course_id").where("courses_users.status = 2 AND courses_users.user_id = '" + current_user.id.to_s + "'")
 
   end
 
