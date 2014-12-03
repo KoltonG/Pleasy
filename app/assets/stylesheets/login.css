@@ -10,7 +10,7 @@
 
 	body, input, select, textarea {
 		color: white !important;
-		font-family: 'Lato'=, sans-serif;
+		font-family: 'Raleway'=, sans-serif;
 		font-size: 15pt;
 		font-weight: 700 !important;
 		letter-spacing: -0.025em;
@@ -383,7 +383,7 @@
 	border: 1.5px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
 	color: #fff;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	padding: 4px;
@@ -396,7 +396,7 @@
 	border: 1.5px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
 	color: #fff;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	padding: 4px;
@@ -411,7 +411,7 @@
 	cursor: pointer;
 	border-radius: 2px;
 	color: #fff;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 700;
 	alignment-baseline: 
