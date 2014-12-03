@@ -10,7 +10,7 @@
 
 	body, input, select, textarea {
 		color: white !important;
-		font-family: 'Raleway'=, sans-serif;
+		font-family: 'Raleway', sans-serif;
 		font-size: 15pt;
 		font-weight: 700 !important;
 		letter-spacing: -0.025em;
