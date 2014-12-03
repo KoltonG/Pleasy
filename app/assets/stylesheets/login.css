@@ -387,7 +387,7 @@
 	font-size: 16px;
 	font-weight: 700;
 	padding: 4px;
-    position: absolute;
+    position: relative;
 }
 
 .login input[type=password]{
@@ -402,7 +402,7 @@
 	font-weight: 700;
 	padding: 4px;
 	margin-top: 10px;
-    position: absolute;
+    position: relative;
 }
 
 .login input[type=submit]{
@@ -419,7 +419,7 @@
 	alignment-baseline: 
 	padding: 6px;
 	margin-top: 10px;
-    position: absolute;
+    position: relative;
 }
 
 .login input[type=button]:hover{
